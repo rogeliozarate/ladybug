@@ -1,13 +1,33 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (3.2.14)
+      activesupport (= 3.2.14)
+      builder (~> 3.0.0)
+    activesupport (3.2.14)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
     backports (3.3.3)
+    builder (3.0.4)
     eventmachine (1.0.3)
+    haml (4.0.3)
+      tilt
+    i18n (0.6.5)
+    mongoid (3.1.4)
+      activemodel (~> 3.2)
+      moped (~> 1.4)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.22)
+    moped (1.5.1)
+    multi_json (1.7.9)
+    origin (1.1.0)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    redcarpet (3.0.0)
+    sass (3.2.10)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -22,10 +42,15 @@ GEM
     sinatra-reloader (1.0)
       sinatra-contrib
     tilt (1.4.1)
+    tzinfo (0.3.37)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
+  mongoid
+  redcarpet
+  sass
   sinatra
   sinatra-reloader
