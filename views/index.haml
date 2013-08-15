@@ -1,0 +1,8 @@
+%h1 Pages
+-if @pages.any?
+  %ul.pages
+  - @pages.each do |page|
+    %li
+      <a href="/pages/#{page.id}">#{page.title}</a>
+- else
+  p No pages here!

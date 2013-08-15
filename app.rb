@@ -16,6 +16,13 @@ class Page
   field :content,     type: String
 end
 
+
+get '/pages' do
+  @title = "Ladybug CMS: Page List"
+  @pages = Page.all
+  haml :index
+end
+
 get '/' do
   "home"
 end
