@@ -23,6 +23,12 @@ get '/pages' do
   haml :index
 end
 
+get '/pages/:id' do
+  @page = Page.find(params[:id])
+  @title = @page.title
+  haml :show
+end
+
 get '/' do
   "home"
 end
