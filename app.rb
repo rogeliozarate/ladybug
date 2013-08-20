@@ -14,8 +14,22 @@ class Page
   include Mongoid::Document
   field :title,       type: String
   field :content,     type: String
+  field :permalink,   type: String, default: -> {make_permalink}
+  
+  def make_permalink
+    title.strip.downcase.gsub(/\W/,'-').squeeze("-").chomp("-") if title
+  end
 end
 
+
+get '/:permalink' do
+  begin
+    @page = Page.find_by(permalink: params[:permalink])
+  rescue
+    pass
+  end
+  haml  :show
+end
 
 get '/pages' do
   @title = "Ladybug CMS: Page List"

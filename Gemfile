@@ -7,3 +7,4 @@ gem "haml"
 gem "sass"
 gem "mongoid"
 gem "redcarpet"
+gem 'puma'
