@@ -1,6 +1,10 @@
-<a href="/pages">Back to Index</a>
+%a{:href => '/pages'}>Back to index
+
 %h1 
   #{@title}
 
 - if @page.content
   = markdown @page.content
+  
+%a{:href => "/pages/#{@page.id}/edit"}>Edit
+%a{:href => "/pages/delete/#{@page.id}"}>Delete

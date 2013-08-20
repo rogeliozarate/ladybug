@@ -1,0 +1,8 @@
+#h1 Delete Page
+%p 
+  Are you sure you want to delete the page called #{@page.title}?
+#section
+  %form{ :action => "/pages/#{@page.id}", :method => "POST"}
+    %input{:type => "hidden", :name => "_method", :value => "DELETE"}
+    %input{:type => "submit", :value => "Delete"}
+  %a{:href => "/pages"}Cancel

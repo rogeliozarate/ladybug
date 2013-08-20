@@ -1,0 +1,17 @@
+%h1 Edit page
+
+#section
+  %form{ :action => "/pages/#{@page.id}", :method => "post"}
+    %input{:type => "hidden", :name => "_method", :value => "put"}
+    %fieldset
+      %label{:for => "title"} Title:  
+      %br
+      %input{:type => "text", :name => "page[title]", :class => "input", :value => @page.title}
+      %br
+      %label{:for => "content"} Content:
+      %br
+      %textarea{:type => "textarea", :name => "page[content]", :class => "input", :rows => "10" ,:cols => "50"} #{@page.content}
+      %br
+      %input{:type => "submit", :value => "Update", :class => "button"}
+
+

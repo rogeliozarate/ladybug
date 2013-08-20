@@ -33,6 +33,28 @@ post '/pages/new' do
    redirect to("/pages/#{page.id}")
 end
 
+get '/pages/:id/edit' do
+  @page = Page.find(params[:id])
+  haml :edit
+end
+
+put '/pages/:id' do
+  page = Page.find(params[:id])
+  page.update_attributes(params[:page])
+  redirect to("/pages/#{page.id}")
+end
+
+get '/pages/delete/:id' do
+  @page = Page.find(params[:id])
+  haml :delete
+end
+
+delete '/pages/:id' do
+  Page.find(params[:id]).destroy
+  redirect to('/pages')
+end
+
+
 get '/pages/:id' do
   @page = Page.find(params[:id])
   @title = @page.title
