@@ -28,6 +28,10 @@ get '/pages/new' do
   haml :new
 end
 
+post '/pages/new' do
+   page = Page.create(params[:page])
+   redirect to("/pages/#{page.id}")
+end
 
 get '/pages/:id' do
   @page = Page.find(params[:id])
