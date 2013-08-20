@@ -33,6 +33,13 @@ post '/pages/new' do
    redirect to("/pages/#{page.id}")
 end
 
+get '/pages/:id/edit' do
+  @page = Page.find(params[:id])
+  #slim :edit
+  "#{@page.id}"
+end
+
+
 get '/pages/:id' do
   @page = Page.find(params[:id])
   @title = @page.title
