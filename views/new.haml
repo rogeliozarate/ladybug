@@ -4,8 +4,11 @@
   %form{ :action => "", :method => "post"}
     %fieldset
       %label{:for => "title"} Title:  
+      %br
       %input{:type => "text", :name => "page[title]", :class => "input"}
       %br
       %label{:for => "content"} Content:
-      %input{:type => "text", :name => "page[content]", :class => "input", :rows => "10" ,:columns => "72"}
+      %br
+      %textarea{:type => "textarea", :name => "page[content]", :class => "input", :rows => "10" ,:cols => "50"}
+      %br
       %input{:type => "submit", :value => "Create", :class => "button"}

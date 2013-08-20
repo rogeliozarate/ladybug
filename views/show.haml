@@ -1,5 +1,6 @@
 <a href="/pages">Back to Index</a>
 %h1 
   #{@title}
-  - if @page.content
-    = markdown @page.content
+
+- if @page.content
+  = markdown @page.content
