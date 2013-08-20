@@ -44,6 +44,16 @@ put '/pages/:id' do
   redirect to("/pages/#{page.id}")
 end
 
+get '/pages/delete/:id' do
+  @page = Page.find(params[:id])
+  haml :delete
+end
+
+delete '/pages/:id' do
+  Page.find(params[:id]).destroy
+  redirect to('/pages')
+end
+
 
 get '/pages/:id' do
   @page = Page.find(params[:id])
