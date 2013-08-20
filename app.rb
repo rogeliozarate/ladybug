@@ -35,8 +35,13 @@ end
 
 get '/pages/:id/edit' do
   @page = Page.find(params[:id])
-  #slim :edit
-  "#{@page.id}"
+  haml :edit
+end
+
+put '/pages/:id' do
+  page = Page.find(params[:id])
+  page.update_attributes(params[:page])
+  redirect to("/pages/#{page.id}")
 end
 
 
