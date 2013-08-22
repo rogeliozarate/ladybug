@@ -6,5 +6,5 @@
 - if @page.content
   = markdown @page.content
   
-%a{:href => "/pages/#{@page.id}/edit"}>Edit
-%a{:href => "/pages/delete/#{@page.id}"}>Delete
+%a{:class => "button",:href => "/pages/#{@page.id}/edit"}>Edit
+%a{:class => "button",:href => "/pages/delete/#{@page.id}"}>Delete
